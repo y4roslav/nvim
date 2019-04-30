@@ -8,7 +8,7 @@ Install python lib for neovim
 
 [Languages servers](https://langserver.org) based on opensources projects
 
-* [Python](https://github.com/palantir/python-language-server)
-* [C++ cquery](https://github.com/cquery-project/cquery)
-* [Clang server](https://clang.llvm.org/extra/clangd.html)
 * [Ruby](https://github.com/hackhowtofaq/vim-solargraph)
+* [Python](https://github.com/prabirshrestha/vim-lsp/wiki/Servers-Python)
+* [JavaScript](https://github.com/prabirshrestha/vim-lsp/wiki/Servers-Flow) 
+* [Rust](https://github.com/prabirshrestha/vim-lsp/wiki/Servers-Rust) 

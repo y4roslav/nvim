@@ -1,21 +1,42 @@
-" language_client.vim contains vim settings specific to the language
-" client plugin
+" Configure all LSP related option
 
-" language server commands
-" \ 'cpp': ['cquery', '--log-file=/tmp/cq.log'],
-" \ 'cpp': ['clangd'],
-let g:LanguageClient_serverCommands = {
-            \ 'cpp': ['cquery', '--log-file=/tmp/cq.log'],
-            \ 'c': ['cquery', '--log-file=/tmp/cq.log'],
-            \ }
-let g:LanguageClient_autoStart = 1
-let g:LanguageClient_rootMarkers = {
-            \ 'cpp': ['compile_commands.json', 'build'],
-            \ 'c': ['compile_commands.json', 'build'],
-            \ }
+" Python 
 
-set completefunc=LanguageClient#complete
-set formatexpr=LanguageClient_textDocument_rangeFormatting()
+if executable('pyls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd': {server_info->['pyls']},
+        \ 'whitelist': ['python'],
+        \ })
+endif
 
-let g:LanguageClient_loadSettings = 1
-let g:LanguageClient_settingsPath = '${HOME}/.config/nvim/settings.json'
+" JS 
+if executable('flow')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'flow',
+        \ 'cmd': {server_info->['flow', 'lsp']},
+        \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), '.flowconfig'))},
+        \ 'whitelist': ['javascript', 'javascript.jsx'],
+        \ })
+endif
+
+" Rust
+if executable('rls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'rls',
+        \ 'cmd': {server_info->['rustup', 'run', 'stable', 'rls']},
+        \ 'workspace_config': {'rust': {'clippy_preference': 'on'}},
+        \ 'whitelist': ['rust'],
+        \ })
+endif
+
+" Ruby
+if executable('solargraph')
+    " gem install solargraph
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'solargraph',
+        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'solargraph stdio']},
+        \ 'initialization_options': {"diagnostics": "true"},
+        \ 'whitelist': ['ruby'],
+        \ })
+endif

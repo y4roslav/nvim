@@ -12,3 +12,14 @@ cp -vfr * ~/.config/nvim
 # Install neovim modules
 pip3 install neovim
 nvim +PlugInstall +UpdateRemotePlugins +qa
+
+# Install Dependencies
+npm install -g flow-bin
+
+# Rust 
+cargo install rls 
+
+# Ruby
+gem install solargraph
+
+

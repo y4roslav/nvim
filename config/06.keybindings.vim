@@ -1,4 +1,3 @@
-"=====================================================
 ""===================== MAPPINGS ======================
 
 " This comes first, because we have mappings that depend on leader
@@ -50,6 +49,7 @@ let g:ctrlp_use_caching = 1
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
 let g:ctrlp_match_window = 'bottom,order:btt,max:10,results:10'
+let g:ctrlp_buftag_types = {'go' : '--language-force=go --golang-types=ftv'}
 
 func! MyCtrlPTag()
   let g:ctrlp_prompt_mappings = {
@@ -67,7 +67,8 @@ imap <C-b> <esc>:CtrlPCurWD<cr>
 "================= Tagbar=================
 nmap <Leader>t :TagbarToggle<CR>
 
-"======= Copy/Paste =====================
+"=================LSP====================
+let g:lsp_signs_enabled = 1         " enable signs
+let g:lsp_diagnostics_echo_cursor = 1 " enable echo under cursor when in normal mode
+let g:lsp_signs_error = {'text': '✗'}
 
-"map <Leader>y 
-"map <Leader>p

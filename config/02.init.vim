@@ -1,11 +1,5 @@
-" init.vim contains all of the initialization plugins for vim
-" note that this has to be sourced second since dein needs to
-" run its scripts first. This contains misc startup settings
-" for vim
-
 " Boolean options
 set nocompatible                      " be iMproved
-set clipboard+=unnamedplus
 set ruler              	       		    " shows the current line number at the bottom right
 set wildmenu      	       		        " great command-line completion, use '<Tab>' to move around and `<CR>` to validate
 set number				                    " Enable number field for every file
@@ -18,17 +12,27 @@ set tabstop=2 shiftwidth=2 expandtab	" Ser fort tab for ruby
 set switchbuf=usetab
 set backspace=2				                " Allow backspacing  over everething including indent, eol in insert mode 
 set noswapfile
-set fileformats=unix,dos,mac          " Prefer Unix over Windows over OS 9 formats
-set ignorecase                        " Search case insensitive...
-set smartcase                         " ... but not it begins with upper case 
+set fileformats=unix,dos,mac        " Prefer Unix over Windows over OS 9 formats
+set ignorecase               " Search case insensitive...
+set smartcase                " ... but not it begins with upper case 
 set completeopt=menu,menuone
-set nocursorcolumn                    " speed up syntax highlighting
+set nocursorcolumn           " speed up syntax highlighting
 set nocursorline
 set updatetime=400
 set autowrite
 
 syntax on 				" Enable collor scheme for appropriate type of file 
 
+" Note: Skip initialization for vim-tiny or vim-small.
+if 0 | endif
+
+if has('vim_starting')
+  if &compatible
+    set nocompatible               " Be iMproved
+  endif
+
+endif
+ 
 filetype plugin indent on
  
 " BUNDLE CONFIGURATION
@@ -45,6 +49,13 @@ let g:PaperColor_Theme_Options = {
   \   }
   \ }
 
-" open help vertically
-command! -nargs=* -complete=help Help vertical belowright help <args>
-autocmd FileType help wincmd L
+" Change cursors mode depending on mode 
+autocmd InsertEnter * set cul
+autocmd InsertLeave * set nocul
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+
+" Source the vimrc file after saving it
+if has("autocmd")
+	autocmd bufwritepost ~/.config/nvim/config/* source $MYVIMRC
+endif

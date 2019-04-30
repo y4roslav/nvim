@@ -1,81 +1,85 @@
-" Required:
-set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+" vimrc file
+" Author: Yaroslav Ravlinko 
+" E-mail: yaroslav.ravlinko@7insyde.com
 
 " Required:
-if dein#load_state('~/.cache/dein')
-	call dein#begin('~/.cache/dein')
+call plug#begin(expand('~/.vim/bundle/'))
 
-	" Let dein manage dein
-	" Required:
-	call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+" My Bundles here:
 
-	" Add or remove your plugins here:
-	call dein#add('Shougo/neosnippet.vim')
-	call dein#add('Shougo/neosnippet-snippets')
-	call dein#add('sheerun/vim-polyglot')
-	call dein#add('Shougo/vimshell')
-	call dein#add('Shougo/deoplete.nvim')
-	call dein#add('vim-airline/vim-airline')
-	call dein#add('vim-airline/vim-airline-themes')
-	call dein#add('Shougo/neoinclude.vim')
-	call dein#add('Shougo/neco-vim')
-	call dein#add('tmhedberg/SimpylFold')
-	call dein#add('Konfekt/FastFold')
-	call dein#add('w0rp/ale')
-	call dein#add('Shougo/neoinclude.vim')
-	call dein#add('cloudhead/neovim-fuzzy')
-	call dein#add('neomutt/neomutt.vim')
-	call dein#add('junegunn/fzf')
-	call dein#add('zchee/deoplete-jedi')
-	call dein#add('alaric/neovim-visor')
-	call dein#add('christoomey/vim-tmux-navigator')
-	call dein#add('autozimu/LanguageClient-neovim', {
-				\ 'rev': 'next',
-				\ 'build': 'bash install.sh',
-				\ })
-	call dein#add('NLKNguyen/papercolor-theme')
-  " CtrlP
-	call dein#add('ctrlpvim/ctrlp.vim')
-  " Tagbar
-	call dein#add('majutsushi/tagbar')
-  " Language: JS
-	call dein#add('pangloss/vim-javascript')
-  " Language: Ruby
-	call dein#add('hdima/python-syntax')
-	call dein#add('tpope/vim-rails')
-	call dein#add('vim-ruby/vim-ruby')
-	call dein#add('tpope/vim-bundler')
-	call dein#add('tpope/vim-cucumber')
-	call dein#add('tpope/vim-haml')
-	call dein#add('skalnik/vim-vroom')
-  " General
-	call dein#add('ekalinin/Dockerfile.vim', {'for' : 'Dockerfile'})
-	call dein#add('elzr/vim-json', {'for' : 'json'})
-	call dein#add('fatih/vim-hclfmt')
-	call dein#add('fatih/vim-nginx', {'for' : 'nginx'})
-	call dein#add('hashivim/vim-hashicorp-tools')
-	call dein#add('vim-scripts/c.vim')
-	call dein#add('mattn/emmet-vim')
-	call dein#add('MikeCoder/markdown-preview.vim')
-	call dein#add('ingydotnet/yaml-vim')
-  " Git 
-	call dein#add('gregsexton/gitv')
-	call dein#add('tpope/vim-fugitive')
-  " JSON 
-	call dein#add('elzr/vim-json')
+" Visual effects 
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'tomasr/molokai'
+Plug 'chriskempson/base16-vim'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'neutaaaaan/iosvkem'
+Plug 'Siphalor/vim-atomified'
+Plug 'Shougo/denite.nvim'
 
-	" Required:
-	call dein#end()
-	call dein#save_state()
-endif
+" Syntax validation  
+Plug 'scrooloose/syntastic'
 
-" Required:
-filetype plugin indent on
-syntax enable
+" Search 
+Plug 'ctrlpvim/ctrlp.vim'
 
-" If you want to install not installed plugins on startup.
-if dein#check_install()
-	call dein#install()
-endif
+" Tagbar 
+Plug 'majutsushi/tagbar'
 
-"End dein Scripts-------------------------
+""""" DSL and Programing languages """"
+" General 
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'roxma/nvim-yarp'
+
+" Language Serveres Protocol
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'ryanolsonx/vim-lsp-python'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+
+" JS
+Plug 'pangloss/vim-javascript'
+
+" Python
+Plug 'hdima/python-syntax'
+Plug 'ryanolsonx/vim-lsp-python'
+
+" Ruby
+Plug 'tpope/vim-rails'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-cucumber'
+Plug 'tpope/vim-haml'
+Plug 'skalnik/vim-vroom'
+
+" General 
+Plug 'ekalinin/Dockerfile.vim', {'for' : 'Dockerfile'}
+Plug 'elzr/vim-json', {'for' : 'json'}
+Plug 'fatih/vim-hclfmt'
+Plug 'fatih/vim-nginx' , {'for' : 'nginx'}
+Plug 'hashivim/vim-hashicorp-tools'
+Plug 'vim-scripts/c.vim'
+Plug 'mattn/emmet-vim/'
+Plug 'MikeCoder/markdown-preview.vim'
+Plug 'ingydotnet/yaml-vim'
+
+" Git utilities 
+Plug 'gregsexton/gitv' | Plug 'tpope/vim-fugitive'
+
+" Easy aligh
+Plug 'junegunn/vim-easy-align'
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+" JSON Tool
+Plug 'elzr/vim-json'
+Plug 'knt45/jq-wrapper.vim'
+
+" AWS
+ Plug 'https://github.com/m-kat/aws-vim'
+
+  call plug#end()
