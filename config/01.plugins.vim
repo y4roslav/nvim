@@ -28,9 +28,12 @@ Plug 'majutsushi/tagbar'
 
 """"" DSL and Programing languages """"
 " General 
-Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'roxma/nvim-yarp'
+Plug 'fishbullet/deoplete-ruby'
+Plug 'sebastianmarkow/deoplete-rust'
+
 
 " Language Serveres Protocol
 Plug 'prabirshrestha/asyncomplete.vim'
