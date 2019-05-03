@@ -10,7 +10,7 @@ mkdir -v ~/.config/nvim
 cp -vfr * ~/.config/nvim
 
 # Install neovim modules
-pip3 install neovim
+pip3 install neovim --user
 nvim +PlugInstall +UpdateRemotePlugins +qa
 
 # Install Dependencies
