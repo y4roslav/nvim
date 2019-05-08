@@ -40,3 +40,12 @@ if executable('solargraph')
         \ 'whitelist': ['ruby'],
         \ })
 endif
+
+" Clang
+if executable('clangd')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'clangd',
+        \ 'cmd': {server_info->['clangd', '-background-index']},
+        \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+        \ })
+endif
