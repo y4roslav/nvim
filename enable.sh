@@ -22,4 +22,5 @@ cargo install rls
 # Ruby
 gem install solargraph
 
-
+# Go
+go get -u golang.org/x/tools/cmd/gopls
