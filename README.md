@@ -11,4 +11,5 @@ Install python lib for neovim
 * [Ruby](https://github.com/hackhowtofaq/vim-solargraph)
 * [Python](https://github.com/prabirshrestha/vim-lsp/wiki/Servers-Python)
 * [JavaScript](https://github.com/prabirshrestha/vim-lsp/wiki/Servers-Flow) 
-* [Rust](https://github.com/prabirshrestha/vim-lsp/wiki/Servers-Rust) 
+* [Rust](https://github.com/prabirshrestha/vim-lsp/wiki/Servers-Rust)
+* [Go](https://github.com/prabirshrestha/vim-lsp/wiki/Servers-Go)
