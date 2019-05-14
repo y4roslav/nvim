@@ -49,3 +49,13 @@ if executable('clangd')
         \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
         \ })
 endif
+
+" Go
+if executable('gopls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'gopls',
+        \ 'cmd': {server_info->['gopls', '-mode', 'stdio']},
+        \ 'whitelist': ['go'],
+        \ })
+    autocmd BufWritePre *.go LspDocumentFormatSync
+endif
