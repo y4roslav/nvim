@@ -16,6 +16,8 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'neutaaaaan/iosvkem'
 Plug 'Siphalor/vim-atomified'
 Plug 'Shougo/denite.nvim'
+Plug 'Raimondi/delimitMate'
+Plug 'joshdick/onedark.vim'
 
 " Syntax validation  
 Plug 'scrooloose/syntastic'
@@ -25,6 +27,9 @@ Plug 'ctrlpvim/ctrlp.vim'
 
 " Tagbar 
 Plug 'majutsushi/tagbar'
+
+" Nerd Tree
+Plug 'scrooloose/nerdtree'
 
 """"" DSL and Programing languages """"
 " General 
@@ -48,6 +53,7 @@ Plug 'pangloss/vim-javascript'
 " Python
 Plug 'hdima/python-syntax'
 Plug 'ryanolsonx/vim-lsp-python'
+Plug 'Glench/Vim-Jinja2-Syntax'
 
 " Ruby
 Plug 'tpope/vim-rails'
@@ -84,5 +90,8 @@ Plug 'knt45/jq-wrapper.vim'
 
 " AWS
  Plug 'https://github.com/m-kat/aws-vim'
+
+" Jupyter
+Plug 'bfredl/nvim-ipy'
 
   call plug#end()

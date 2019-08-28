@@ -41,21 +41,23 @@ if executable('solargraph')
         \ })
 endif
 
-" Clang
-if executable('clangd')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'clangd',
-        \ 'cmd': {server_info->['clangd', '-background-index']},
-        \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
-        \ })
-endif
+" CLang
 
-" Go
+if executable('clangd')
+	    au User lsp_setup call lsp#register_server({
+			        \ 'name': 'clangd',
+			        \ 'cmd': {server_info->['clangd', '-background-index']},
+			        \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+			        \ })
+		endif
+
+" Golang
+
 if executable('gopls')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'gopls',
-        \ 'cmd': {server_info->['gopls', '-mode', 'stdio']},
-        \ 'whitelist': ['go'],
-        \ })
-    autocmd BufWritePre *.go LspDocumentFormatSync
+  au User lsp_setup call lsp#register_server({
+    \ 'name': 'gopls',
+    \ 'cmd': {server_info->['gopls', '-mode', 'stdio']},
+    \ 'whitelist': ['go'],
+    \ })
+  autocmd BufWritePre *.go LspDocumentFormatSync
 endif

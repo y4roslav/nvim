@@ -74,3 +74,6 @@ let g:lsp_signs_error = {'text': '✗'}
 
 "================Deoplete ==============
 let g:deoplete#enable_at_startup = 1
+
+"============ Nerd Tree ================
+map <Leader>n :NERDTreeToggle<CR>
