@@ -17,6 +17,7 @@ Plug 'neutaaaaan/iosvkem'
 Plug 'Siphalor/vim-atomified'
 Plug 'Shougo/denite.nvim'
 Plug 'Raimondi/delimitMate'
+Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
 
 " Syntax validation  

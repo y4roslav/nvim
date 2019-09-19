@@ -39,18 +39,18 @@ filetype plugin indent on
 " colorscheme molokai
 " set termguicolors
 " set background=dark
-colorscheme onedark 
+" colorscheme onedark 
 " Make the gutters darker than the background.
-" colorscheme PaperColor
+colorscheme PaperColor
 " hi light
 " set background
-" let g:PaperColor_Theme_Options = {
-"     \   'theme': {
-"     \     'default': {
-"     \       'transparent_background': 1
-"     \     }
-"     \   }
-"     \ }
+let g:PaperColor_Theme_Options = {
+    \   'theme': {
+    \     'default': {
+    \       'transparent_background': 1
+    \     }
+    \   }
+    \ }
 
 " Change cursors mode depending on mode 
 autocmd InsertEnter * set cul
