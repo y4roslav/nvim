@@ -32,12 +32,12 @@ map <C-H> <C-W>h
 
 " Normal mode mapping
 " Switch buffer
-nnoremap <TAB> :bn<CR>
-nnoremap <S-TAB> :bp<CR>
+nnoremap <S-Right> :bn<CR>
+nnoremap <S-Left> :bp<CR>
 
 " Switch tabs
-nnoremap <S-Left> :tabprevious<CR>
-nnoremap <S-Right> :tabnext<CR>
+nnoremap <TAB> :tabnext<CR>
+nnoremap <S-TAB> :tabprevious<CR>
 
 " ==================== CtrlP ====================
 let g:ctrlp_cmd = 'CtrlPMRU'
