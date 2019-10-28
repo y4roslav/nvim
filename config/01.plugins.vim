@@ -38,9 +38,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'roxma/nvim-yarp'
 Plug 'fishbullet/deoplete-ruby'
-Plug 'sebastianmarkow/deoplete-rust'
-
-
+Plug 'rust-lang/rust.vim'
 " Language Serveres Protocol
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/async.vim'

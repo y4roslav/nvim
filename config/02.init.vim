@@ -5,6 +5,7 @@ set wildmenu      	       		        " great command-line completion, use '<Tab>'
 set number				                    " Enable number field for every file
 set rnu					                      " Relative line numbers
 set hidden
+" set paste  
 set encoding=utf-8       		          " Set encoding to Unicode
 set guifont=Monoid:h10 		    " Set GUI font size 
 set tabstop=2 shiftwidth=2 expandtab	" Ser fort tab for ruby

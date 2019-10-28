@@ -12,4 +12,3 @@ Install python lib for neovim
 * [Python](https://github.com/prabirshrestha/vim-lsp/wiki/Servers-Python)
 * [JavaScript](https://github.com/prabirshrestha/vim-lsp/wiki/Servers-Flow) 
 * [Rust](https://github.com/prabirshrestha/vim-lsp/wiki/Servers-Rust)
-* [Go](https://github.com/prabirshrestha/vim-lsp/wiki/Servers-Go)
