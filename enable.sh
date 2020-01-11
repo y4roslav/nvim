@@ -1,5 +1,9 @@
 #!/usr/bin/env zsh
 
+# Install plug 
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 # Backup neovim
 if [[ -d '~/.config/nvim' ]]; then
 	mv -f ~/.config/nvim ~/.config/nvim.orig
@@ -20,7 +24,7 @@ npm install -g flow-bin
 cargo install rls 
 
 # Ruby
-gem install solargraph
+sudo gem install solargraph
 
-# Go
-go get -u golang.org/x/tools/cmd/gopls
+# Python 
+pip3 install python-language-server
